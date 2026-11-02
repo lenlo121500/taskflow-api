@@ -1,6 +1,8 @@
 import mongoose from "mongoose";
 import APIError from "../utils/APIError.js";
-import logger from "../config/logger.js";
+import { createModuleLogger } from "../../config/logger.js";
+
+const logger = createModuleLogger("error-middleware");
 
 const normalizeError = (err) => {
   if (err instanceof APIError) return err;
