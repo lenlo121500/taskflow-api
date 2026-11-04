@@ -6,10 +6,8 @@ import { connectDB } from "../config/db.js";
 
 const startServer = async () => {
   try {
-    // Connect to database first
     await connectDB();
 
-    // Start HTTP server after successful connection
     app.listen(ENV_VARS.PORT, () => {
       logger.info(`Server running on port ${ENV_VARS.PORT}`);
     });
